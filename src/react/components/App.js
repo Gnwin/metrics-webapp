@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import '../../assets/stylesheets/App.css';
 
 const App = () => {
   useEffect(() => {
