@@ -1,3 +1,52 @@
 * {
   color: black;
 }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.info {
+  padding-bottom: 30%;
+}
+
+.all-stats {
+  /* display: flex; */
+  /* text-align: center; */
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  /* text-align: center; */
+}
+
+.continents {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 100%; */
+}
+
+.continent {
+  width: 50%;
+  padding: 3rem;
+}
+
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 100%; */
+}
+
+.country {
+  width: 50%;
+  padding: 3rem;
+}
