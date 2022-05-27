@@ -73,7 +73,6 @@ const Metrics = () => {
 
   return (
     <div>
- 
       <Navigation />
       <div className="hero">
         <div className="info">
