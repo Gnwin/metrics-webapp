@@ -8,29 +8,9 @@ const Country = () => {
   // const dispatch = useDispatch();
   let params = useParams();
   let location = useLocation();
-  // let history = useHref();
-  console.log(params)
-  console.log(location)
-  const [] = useState([
-    // logotext: 'Space Travelers\' Hub',
-    // continents: ['asia', 'europe', 'africa', 'northamerica'],
-      {
-        id: 0,
-        states: ['Japan', 'Indonesia', 'China', 'India']
-      },
-      {
-        id: 1,
-        states: ['Ukraine', 'Germany', 'France', 'Italy']
-      },
-      {
-        states: ['SouthAfrica', 'Nigeria', 'Kenya', 'Ghana']
-      },
-      {
-        id: 3,
-        states: ['Unitedstates', 'Canada', 'Mexico', 'Greenland']
-      }
-    ])
-  // console.log(history)
+
+  console.log(params);
+  console.log(location);
 
   return (
     <>

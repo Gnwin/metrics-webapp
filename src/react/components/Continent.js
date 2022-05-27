@@ -13,34 +13,7 @@ const Continent = () => {
   console.log(location);
   // console.log(history)
 
-  // const [statesState] = useState([
-  //   {
-  //     id: 0,
-  //     country: 'asia',
-  //     states: [],
-  //   },
-  //   {
-  //     id: 1,
-  //     country: 'europe',
-  //     states: [],
-  //   },
-  //   {
-  //     id: 2,
-  //     country: 'africa',
-  //     states: [],
-  //   },
-  //   {
-  //     id: 3,
-  //     country: 'northamerica',
-  //     states: [],
-  //   }
-  // ]);
-
   useEffect(() => {})
-
-  // const reserve = (rocket) => {
-  //   dispatch(handleReserveRocket(rocket));
-  // };
 
   return (
     <>
