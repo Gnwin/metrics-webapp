@@ -19,6 +19,7 @@
 
 .all-stats {
   /* display: flex; */
+
   /* text-align: center; */
 }
 
@@ -26,12 +27,14 @@
   display: flex;
   justify-content: space-between;
   padding: 2rem;
+
   /* text-align: center; */
 }
 
 .continents {
   display: flex;
   flex-wrap: wrap;
+
   /* width: 100%; */
 }
 
@@ -43,6 +46,7 @@
 .countries {
   display: flex;
   flex-wrap: wrap;
+  
   /* width: 100%; */
 }
 
