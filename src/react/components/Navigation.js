@@ -1,12 +1,10 @@
-/* eslint-disable */
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const navigate = useNavigate();
 
-  let location = useLocation();
+  const location = useLocation();
   console.log(location);
 
   const handleBack = () => {
@@ -21,9 +19,9 @@ const Navigation = () => {
         <div
           className="back/home"
         >
-          <button onClick={handleBack}>{location.pathname === '/' ? 'home' : 'Go back'}</button>
+          <button onClick={handleBack} type="button">{location.pathname === '/' ? 'home' : 'Go back'}</button>
         </div>
-        <div className="year" />
+        <div className="year">bjk</div>
       </div>
 
       <div className="nav-title">views</div>

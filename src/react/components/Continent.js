@@ -1,19 +1,18 @@
-/* eslint-disable */
-import React, {useState, useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
 const Continent = () => {
   // const rockets = useSelector((state) => state.rockets);
   // const dispatch = useDispatch();
-  let params = useParams();
-  let location = useLocation();
+  const params = useParams();
+  const location = useLocation();
   // let history = useHref();
   console.log(params);
   console.log(location);
   // console.log(history)
 
-  useEffect(() => {})
+  useEffect(() => {});
 
   return (
     <>
@@ -26,7 +25,7 @@ const Continent = () => {
             to={{
               pathname: `/${params.continent}/${country}`,
             }}
-            state = {{
+            state={{
               country,
               states: location.state.states[index],
             }}

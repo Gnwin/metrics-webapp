@@ -1,8 +1,6 @@
-/* eslint-disable */
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
-import { useParams, useLocation, Link } from 'react-router-dom';
-
 
 const Metrics = () => {
   const [metrics] = useState([
@@ -22,7 +20,7 @@ const Metrics = () => {
         ],
         ['hainan', 'sichuan', 'henan', 'anhui'],
         ['haryana', 'assam', 'nagaland', 'odisha'],
-      ]
+      ],
     },
     {
       id: 2,
@@ -36,7 +34,7 @@ const Metrics = () => {
         ['berlin', 'bavaria', 'saxony', 'hessen'],
         ['paris', 'bretange', 'occitaine', 'normandie'],
         ['lazio', 'tuscany', 'campania', 'marche'],
-      ]
+      ],
     },
     {
       id: 3,
@@ -49,7 +47,7 @@ const Metrics = () => {
         ['abia', 'lagos', 'oyo', 'ogun'],
         ['nairobi', 'central', 'eastern', 'nyanza'],
         ['takoradi', 'accra', 'wa', 'ho'],
-      ]
+      ],
     },
     {
       id: 4,
@@ -62,14 +60,14 @@ const Metrics = () => {
         ['ontario', 'quebec', 'alberta', 'yukon'],
         ['sonora', 'guerrero', 'veracruz'],
         ['avannaata', 'kujalleq', 'qeqqata'],
-      ]
-    }
-  ])
+      ],
+    },
+  ]);
 
-    // let params = useParams();
-    // let location = useLocation();
-    // console.log(params);
-    // console.log(location);
+  // let params = useParams();
+  // let location = useLocation();
+  // console.log(params);
+  // console.log(location);
 
   return (
     <div>
@@ -97,7 +95,7 @@ const Metrics = () => {
             to={{
               pathname: `/${item.continent}`,
             }}
-            state = {{
+            state={{
               countries: item.countries,
               states: item.states,
             }}
