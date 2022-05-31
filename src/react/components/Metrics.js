@@ -10,19 +10,34 @@ const Metrics = () => {
   return (
     <div>
       <Navigation />
-      <div className="hero">
-        <div className="info">
-          <p>2020-03-22 COVID DATA</p>
-          <p>4000 deaths</p>
+      <div
+        className="hero"
+      >
+        <div
+          className="info"
+        >
+          <div className="hp">2020-03-22</div>
+          <p>COVID DATA</p>
+          <p className="num">54894538</p>
+          <p className="deat">infected</p>
         </div>
       </div>
 
       <div className="all-stats">
         <h1 className="stats-title">ALL STATS</h1>
         <div className="stats">
-          <div className="infected">54894538</div>
-          <div className="recovered">348348</div>
-          <div className="deaths">348945</div>
+          <div className="infected">
+            <p>54894538</p>
+            <small className="st">infected</small>
+          </div>
+          <div className="recovered">
+            <p>348348</p>
+            <small className="st">deaths</small>
+          </div>
+          <div className="deaths">
+            <p>348945</p>
+            <small className="st">recovered</small>
+          </div>
         </div>
       </div>
 
@@ -38,10 +53,12 @@ const Metrics = () => {
               state={{
                 countries: item.countries,
                 states: item.states,
+                imageurl: item.imageurl,
               }}
               className="continent"
+              style={{ backgroundImage: `url(${item.imageurl})` }}
             >
-              {item.continent}
+              <div className="bg"><div className="bgin">{item.continent}</div></div>
             </Link>
           ))}
         </div>

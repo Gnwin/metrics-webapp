@@ -36,13 +36,10 @@ function clearcountrydata(countrydata) {
 export function handleReceiveCountryData(country, states) {
   return (dispatch) => API.getAllCountryData(country, states)
     .then((countrydata) => {
-      console.log(countrydata);
       // eslint-disable-next-line
       const cont = countrydata.map((u) => {
         return Object.values(u.data.dates[date].countries)[0].regions[0];
       });
-      console.log(cont);
-
       dispatch(receivecountrydata(cont));
     })
     .catch(() => {
@@ -55,12 +52,3 @@ export function handleClearCountryData(data) {
     dispatch(clearcountrydata(data));
   };
 }
-
-// today_confirmed: 30
-// today_deaths: 0
-// today_new_confirmed: 8
-// today_new_deaths: 0
-// today_new_open_cases: 7
-// today_new_recovered: 1
-// today_open_cases: 28
-// today_recovered: 2

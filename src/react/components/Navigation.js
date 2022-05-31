@@ -1,6 +1,11 @@
 import React from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
+import home from '../../assets/images/home.png';
+import back from '../../assets/images/back.png';
+import settings from '../../assets/images/settings.png';
+import mic from '../../assets/images/mic.png';
+
 const Navigation = () => {
   const navigate = useNavigate();
   const params = useParams();
@@ -22,7 +27,7 @@ const Navigation = () => {
             type="button"
             className="backb"
           >
-            {location.pathname === '/' ? 'home' : '<'}
+            {location.pathname === '/' ? <img src={home} alt="" className="imgw" /> : <img src={back} alt="" className="imgw" />}
           </button>
         </div>
         <div className="year">{Object.keys(params).length === 1 ? '2020-03-22' : ''}</div>
@@ -39,8 +44,10 @@ const Navigation = () => {
       )}
 
       <div className="utils">
-        <div className="mic">{location.pathname !== '/' ? 'mic' : ''}</div>
-        <div className="settings">settings</div>
+        <div className="mic">{location.pathname !== '/' ? <img src={mic} alt="" className="imgw" /> : ''}</div>
+        <div className="settings">
+          <img src={settings} alt="" className="imgw" />
+        </div>
       </div>
     </div>
   );

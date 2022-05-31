@@ -21,7 +21,12 @@ const Continent = () => {
   return (
     <>
       <Navigation />
-      <div>{params.continent}</div>
+      <div
+        className="cont-head"
+        style={{ backgroundImage: `url(${location.state.imageurl})` }}
+      >
+        <div className="bgi"><div className="bgiin">{params.continent}</div></div>
+      </div>
       <div className="countries">
         {continentdata.map((country, index) => (
           <Link
@@ -32,12 +37,38 @@ const Continent = () => {
             state={{
               country: country.id,
               states: location.state.states[index],
+
             }}
             className="country"
           >
-            {country.name}
-            {country.today_confirmed}
-            {country.today_open_cases}
+            <p className="cname">{country.name}</p>
+            <p className="ctc">
+              today confirmed:
+              {'  '}
+              {country.today_confirmed}
+            </p>
+            <p className="ctc">
+              todays cases:
+              {'  '}
+              {country.today_open_cases}
+            </p>
+            <p className="ctc">
+              today new confirmed:
+              {'  '}
+              {country.today_new_confirmed}
+            </p>
+            <p className="ctc">
+              today recovered:
+              {'  '}
+              {country.today_recovered}
+            </p>
+            <p
+              className="ctc"
+            >
+              todays deaths:
+              {'  '}
+              {country.today_deaths}
+            </p>
           </Link>
         ))}
       </div>
