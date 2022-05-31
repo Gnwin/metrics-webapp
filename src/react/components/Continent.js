@@ -1,37 +1,43 @@
 import React, { useEffect } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Navigation from './Navigation';
+import { handleReceiveContinentData, handleClearContinentData } from '../../redux/continents/continent';
 
 const Continent = () => {
-  // const rockets = useSelector((state) => state.rockets);
-  // const dispatch = useDispatch();
+  const continentdata = useSelector((state) => state.continentdata);
+
+  const dispatch = useDispatch();
   const params = useParams();
   const location = useLocation();
-  // let history = useHref();
-  console.log(params);
-  console.log(location);
-  // console.log(history)
 
-  useEffect(() => {});
+  useEffect(() => {
+    if (continentdata.length !== 0) {
+      dispatch(handleClearContinentData([]));
+    }
+    dispatch(handleReceiveContinentData(location.state.countries));
+  }, []);
 
   return (
     <>
       <Navigation />
       <div>{params.continent}</div>
       <div className="countries">
-        {location.state.countries.map((country, index) => (
+        {continentdata.map((country, index) => (
           <Link
-            key={country}
+            key={country.id}
             to={{
-              pathname: `/${params.continent}/${country}`,
+              pathname: `/${params.continent}/${country.id}`,
             }}
             state={{
-              country,
+              country: country.id,
               states: location.state.states[index],
             }}
             className="country"
           >
-            {country}
+            {country.name}
+            {country.today_confirmed}
+            {country.today_open_cases}
           </Link>
         ))}
       </div>

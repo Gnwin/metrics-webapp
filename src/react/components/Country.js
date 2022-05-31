@@ -1,31 +1,37 @@
-import React from 'react';
-import { useParams, useLocation, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Navigation from './Navigation';
+import { handleReceiveCountryData, handleClearCountryData } from '../../redux/countries/country';
 
 const Country = () => {
-  // const rockets = useSelector((state) => state.rockets);
-  // const dispatch = useDispatch();
+  const countrydata = useSelector((state) => state.countrydata);
+
+  const dispatch = useDispatch();
   const params = useParams();
   const location = useLocation();
 
-  console.log(params);
-  console.log(location);
+  useEffect(() => {
+    if (countrydata.length !== 0) {
+      dispatch(handleClearCountryData([]));
+    }
+    dispatch(handleReceiveCountryData(params.country, location.state.states));
+  }, []);
 
   return (
     <>
       <Navigation />
       <div>{params.country}</div>
       <div className="states">
-        {location.state.states.map((state) => (
-          <Link
-            key={state}
-            to={{
-              pathname: `/${params.continent}/${params.country}/${state}}`,
-            }}
+        {countrydata.map((state) => (
+          <div
+            key={state.id}
             className="state"
           >
-            {state}
-          </Link>
+            {state.name}
+            {state.today_confirmed}
+            {state.today_open_cases}
+          </div>
         ))}
       </div>
     </>

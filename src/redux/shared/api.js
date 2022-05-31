@@ -1,16 +1,21 @@
-// import axios from 'axios';
+/* eslint-disable */
+import axios from 'axios';
+import metrics from './metricsInfo';
 
-// https://api.covid19tracking.narrativa.com/api/2020-03-22/country/nigeria/region/lagos
+const baseUrl = 'https://api.covid19tracking.narrativa.com/api/2020-03-22/country'
 
-// const rocketsapi = 'https://api.spacexdata.com/v3/rockets';
-// const missionsapi = 'https://api.spacexdata.com/v3/missions';
-// const dragonsapi = 'https://api.spacexdata.com/v3/dragons';
+export const getAllMetrics = () => new Promise((res) => {
+  setTimeout(() => {
+    res(metrics);
+  }, 2000);
+});
 
-// export const getAllRockets = () => axios.get(rocketsapi)
-//   .then((response) => response.data);
+export const getAllContinentData = (countries) => {
+  const res = countries.map((region) => axios.get(`${baseUrl}/${region}`));
+  return Promise.all(res);
+}
 
-// export const getAllMissions = () => axios.get(missionsapi)
-//   .then((response) => response.data);
-
-// export const getAllDragons = () => axios.get(dragonsapi)
-//   .then((response) => response.data);
+export const getAllCountryData = (country, states) => {
+  const res = states.map((region) => axios.get(`${baseUrl}/${country}/region/${region}`));
+  return Promise.all(res);
+}
