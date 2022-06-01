@@ -27,51 +27,55 @@ const Continent = () => {
       >
         <div className="bgi"><div className="bgiin">{params.continent}</div></div>
       </div>
-      <div className="countries">
-        {continentdata.map((country, index) => (
-          <Link
-            key={country.id}
-            to={{
-              pathname: `/${params.continent}/${country.id}`,
-            }}
-            state={{
-              country: country.id,
-              states: location.state.states[index],
+      {continentdata.length === 0
+        ? (<div className="loading"><div className="load">loading...</div></div>)
+        : (
+          <div className="countries">
+            {continentdata.map((country, index) => (
+              <Link
+                key={country.id}
+                to={{
+                  pathname: `/${params.continent}/${country.id}`,
+                }}
+                state={{
+                  country: country.id,
+                  states: location.state.states[index],
 
-            }}
-            className="country"
-          >
-            <p className="cname">{country.name}</p>
-            <p className="ctc">
-              today confirmed:
-              {'  '}
-              {country.today_confirmed}
-            </p>
-            <p className="ctc">
-              todays cases:
-              {'  '}
-              {country.today_open_cases}
-            </p>
-            <p className="ctc">
-              today new confirmed:
-              {'  '}
-              {country.today_new_confirmed}
-            </p>
-            <p className="ctc">
-              today recovered:
-              {'  '}
-              {country.today_recovered}
-            </p>
-            <p
-              className="ctc"
-            >
-              todays deaths:
-              {'  '}
-              {country.today_deaths}
-            </p>
-          </Link>
-        ))}
-      </div>
+                }}
+                className="country"
+              >
+                <p className="cname">{country.name}</p>
+                <p className="ctc">
+                  today confirmed:
+                  {' '}
+                  {country.today_confirmed}
+                </p>
+                <p className="ctc">
+                  todays cases:
+                  {' '}
+                  {country.today_open_cases}
+                </p>
+                <p className="ctc">
+                  today new confirmed:
+                  {' '}
+                  {country.today_new_confirmed}
+                </p>
+                <p className="ctc">
+                  today recovered:
+                  {' '}
+                  {country.today_recovered}
+                </p>
+                <p
+                  className="ctc"
+                >
+                  todays deaths:
+                  {' '}
+                  {country.today_deaths}
+                </p>
+              </Link>
+            ))}
+          </div>
+        )}
     </>
   );
 };

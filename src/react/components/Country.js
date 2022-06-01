@@ -26,41 +26,45 @@ const Country = () => {
       >
         <div className="bgiiin">{params.country}</div>
       </div>
-      <div className="states">
-        {countrydata.map((state) => (
-          <div
-            key={state.id}
-            className="state"
-          >
-            <div className="ccname">
-              <p>{state.name}</p>
-              <div>
-                <p
-                  className="ctc"
-                >
-                  today new confirmed:
-                  {'  '}
-                  {state.today_confirmed}
-                </p>
-                <p
-                  className="ctc"
-                >
-                  today open cases:
-                  {'  '}
-                  {state.today_open_cases}
-                </p>
-                <p
-                  className="ctc"
-                >
-                  todays deaths:
-                  {'  '}
-                  {state.today_deaths}
-                </p>
+      {countrydata.length === 0
+        ? (<div className="loading"><div className="load">loading...</div></div>)
+        : (
+          <div className="states">
+            {countrydata.map((state) => (
+              <div
+                key={state.id}
+                className="state"
+              >
+                <div className="ccname">
+                  <p>{state.name}</p>
+                  <div>
+                    <p
+                      className="ctc"
+                    >
+                      today new confirmed:
+                      {'  '}
+                      {state.today_confirmed}
+                    </p>
+                    <p
+                      className="ctc"
+                    >
+                      today open cases:
+                      {'  '}
+                      {state.today_open_cases}
+                    </p>
+                    <p
+                      className="ctc"
+                    >
+                      todays deaths:
+                      {'  '}
+                      {state.today_deaths}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        )}
     </>
   );
 };

@@ -43,25 +43,29 @@ const Metrics = () => {
 
       <div className="continentss">
         <h1 className="stats-title">CONTINENTS</h1>
-        <div className="continents">
-          {loading ? <div className="loading">loading...</div> : metrics.map((item) => (
-            <Link
-              key={item.id}
-              to={{
-                pathname: `/${item.continent}`,
-              }}
-              state={{
-                countries: item.countries,
-                states: item.states,
-                imageurl: item.imageurl,
-              }}
-              className="continent"
-              style={{ backgroundImage: `url(${item.imageurl})` }}
-            >
-              <div className="bg"><div className="bgin">{item.continent}</div></div>
-            </Link>
-          ))}
-        </div>
+        {loading
+          ? (<div className="loading"><div className="load">loading...</div></div>)
+          : (
+            <div className="continents">
+              {metrics.map((item) => (
+                <Link
+                  key={item.id}
+                  to={{
+                    pathname: `/${item.continent}`,
+                  }}
+                  state={{
+                    countries: item.countries,
+                    states: item.states,
+                    imageurl: item.imageurl,
+                  }}
+                  className="continent"
+                  style={{ backgroundImage: `url(${item.imageurl})` }}
+                >
+                  <div className="bg"><div className="bgin">{item.continent}</div></div>
+                </Link>
+              ))}
+            </div>
+          )}
       </div>
     </div>
   );
