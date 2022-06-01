@@ -8,7 +8,7 @@ const Metrics = () => {
   const loading = useSelector((state) => state.loading);
 
   return (
-    <div>
+    <div data-testid="met-1">
       <Navigation />
       <div
         className="hero"
@@ -44,10 +44,10 @@ const Metrics = () => {
       <div className="continentss">
         <h1 className="stats-title">CONTINENTS</h1>
         {loading
-          ? (<div className="loading"><div className="load">loading...</div></div>)
+          ? (<div className="loading" data-testid="load1"><div className="load">loading...</div></div>)
           : (
-            <div className="continents">
-              {metrics.map((item) => (
+            <div className="continents" data-testid="cont">
+              {metrics.map((item, index) => (
                 <Link
                   key={item.id}
                   to={{
@@ -59,6 +59,7 @@ const Metrics = () => {
                     imageurl: item.imageurl,
                   }}
                   className="continent"
+                  data-testid={`cont-${index + 1}`}
                   style={{ backgroundImage: `url(${item.imageurl})` }}
                 >
                   <div className="bg"><div className="bgin">{item.continent}</div></div>

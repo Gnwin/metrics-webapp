@@ -19,10 +19,11 @@ const Continent = () => {
   }, []);
 
   return (
-    <>
+    <div data-testid="count-1">
       <Navigation />
       <div
         className="cont-head"
+        data-testid="count-2"
         style={{ backgroundImage: `url(${location.state.imageurl})` }}
       >
         <div className="bgi"><div className="bgiin">{params.continent}</div></div>
@@ -76,7 +77,7 @@ const Continent = () => {
             ))}
           </div>
         )}
-    </>
+    </div>
   );
 };
 
