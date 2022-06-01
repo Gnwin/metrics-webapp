@@ -11,7 +11,6 @@ describe('it tests the App Component', () => {
   it('checks that continent component will get data from metrics component', () => {
     render(<Router><Provider store={store}><App /></Provider></Router>);
     const metrics = screen.getByTestId('met-1');
-    console.log(metrics.childNodes[3].childNodes[1]);
     expect(metrics.childNodes[3].childNodes[1]).toHaveClass('loading');
   });
 
