@@ -17,9 +17,9 @@
   - Jest
   - Redux
 
-## Live Demo
+## Video presentation
 
- - Coming Soon!
+ [click here](https://www.loom.com/share/b3efdda77cd5494892d60420a6897647)
 
 ## Getting Started
 
