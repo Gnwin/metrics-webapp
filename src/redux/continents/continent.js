@@ -36,13 +36,10 @@ function clearcontinentdata(continentdata) {
 export function handleReceiveContinentData(countries) {
   return (dispatch) => API.getAllContinentData(countries)
     .then((continentdata) => {
-      console.log(continentdata);
       // eslint-disable-next-line
       const cont = continentdata.map((u) => {
         return Object.values(u.data.dates[date].countries)[0];
       });
-      console.log(cont);
-
       dispatch(receivecontinentdata(cont));
     })
     .catch(() => {

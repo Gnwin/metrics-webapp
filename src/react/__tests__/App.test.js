@@ -17,4 +17,4 @@ describe('it tests the App Component', () => {
     const metricsComponent = screen.getByTestId('met-1');
     expect(metricsComponent).toBeInTheDocument();
   });
-})
+});

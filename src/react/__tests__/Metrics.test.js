@@ -22,8 +22,8 @@ describe('it tests the App Component', () => {
 
   it('checks metrics data gotten from the api call for metrics component', () => {
     API.getAllMetrics()
-    .then((data) => {
-      expect(data).toBe(metrics);
-    })
+      .then((data) => {
+        expect(data).toBe(metrics);
+      });
   });
-})
+});

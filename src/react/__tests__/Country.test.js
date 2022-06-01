@@ -16,15 +16,15 @@ describe('it tests the App Component', () => {
 
   it('checks if states data is correctly rendered in country component', () => {
     API.getAllMetrics()
-    .then((data) => {
-      expect(data[0].states).toBe(metrics[0].states);
-    })
+      .then((data) => {
+        expect(data[0].states).toBe(metrics[0].states);
+      });
   });
 
   it('checks the number of states received is complete', () => {
     API.getAllMetrics()
-    .then((data) => {
-      expect(data[1].states.length).toBe(metrics[1].states.length);
-    })
+      .then((data) => {
+        expect(data[1].states.length).toBe(metrics[1].states.length);
+      });
   });
-})
+});

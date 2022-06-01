@@ -16,8 +16,8 @@ describe('it tests the App Component', () => {
 
   it('checks if countries data is correctly rendered in continent component', () => {
     API.getAllMetrics()
-    .then((data) => {
-      expect(data[0].countries).toBe(metrics[0].countries);
-    })
+      .then((data) => {
+        expect(data[0].countries).toBe(metrics[0].countries);
+      });
   });
-})
+});
