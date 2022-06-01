@@ -2,7 +2,7 @@
 
 >A mobile web application to check a list of metrics (numeric values) about covid 19 data for 2020-03-22 using the narrativa api. This API for the app all gets numeric values based on a parameter. This project was built using React and Redux.
 
-# Screenshots
+## Screenshots
 
 <img src="./src/assets/images/Screenshot 2022-06-01 at 9.12.11 AM.png">
 <img src="./src/assets/images/Screenshot 2022-06-01 at 9.12.40 AM.png">
@@ -38,6 +38,10 @@ To get a local copy up and running follow this simple step:
 - Run `git checkout test` to switch to test branch
 - Run `npm install` to install dependencies
 - Run `npm run test` to run test
+
+## Tests Screenshots
+
+<img src="./src/assets/images/Screenshot 2022-06-01 at 2.35.46 PM.png">
 
 ## Authors
 
