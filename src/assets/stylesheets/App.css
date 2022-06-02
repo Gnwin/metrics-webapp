@@ -226,3 +226,8 @@
 .bgiiin::first-letter {
   text-transform: capitalize;
 }
+
+.select {
+  color: black;
+  border: 1px solid black;
+}
