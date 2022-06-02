@@ -6,6 +6,7 @@ import { handleReceiveCountryData, handleClearCountryData } from '../../redux/co
 
 const Country = () => {
   const countrydata = useSelector((state) => state.countrydata);
+  const loading = useSelector((state) => state.loading);
 
   const dispatch = useDispatch();
   const params = useParams();
@@ -18,6 +19,8 @@ const Country = () => {
     dispatch(handleReceiveCountryData(params.country, location.state.states));
   }, []);
 
+  console.log(countrydata);
+
   return (
     <>
       <Navigation />
@@ -26,7 +29,7 @@ const Country = () => {
       >
         <div className="bgiiin">{params.country}</div>
       </div>
-      {countrydata.length === 0
+      {countrydata.length === 0 || loading
         ? (<div className="loading"><div className="load">loading...</div></div>)
         : (
           <div className="states">
