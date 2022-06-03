@@ -19,7 +19,7 @@
 
 ## Live preview
 
- [click here](https://eclectic-custard-fa0758.netlify.app/)
+ [click here](https://fantastic-shortbread-de13a8.netlify.app)
 
 ## Video presentation
 
