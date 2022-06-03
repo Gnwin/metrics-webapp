@@ -1,0 +1,71 @@
+# Metrics Webapp
+
+>A mobile web application to check a list of metrics (numeric values) about covid 19 data for 2020-03-22 using the narrativa api. This API for the app all gets numeric values based on a parameter. This project was built using React and Redux.
+
+## Screenshots
+
+<img src="./src/assets/images/Screenshot 2022-06-01 at 9.12.11 AM.png">
+<img src="./src/assets/images/Screenshot 2022-06-03 at 12.57.43 PM.png">
+<img src="./src/assets/images/Screenshot 2022-06-03 at 12.58.59 PM.png">
+
+## Built With
+
+- Technologies used:
+  - React
+  - Html
+  - CSS
+  - Jest
+  - Redux
+
+## Live preview
+
+ [click here](https://fantastic-shortbread-de13a8.netlify.app)
+
+## Video presentation
+
+ [click here](https://www.loom.com/share/8e1eb12821d14746a169c4f2e0128852)
+
+
+## Getting Started
+
+To get a local copy up and running follow this simple step:
+
+- Clone repository to your local machine: `https://github.com/Gnwin/metrics-webapp.git`
+- Run `git checkout test`
+- Run `npm install` to install dependencies
+- Run `npm start` to start the server
+
+## Testing
+
+To get a local copy up and running follow this simple step:
+
+- Clone repository to your local machine: `https://github.com/Gnwin/metrics-webapp.git`
+- Run `git checkout test` to switch to test branch
+- Run `npm install` to install dependencies
+- Run `npm run test` to run test
+
+## Tests Screenshots
+
+<img src="./src/assets/images/Screenshot 2022-06-01 at 2.35.46 PM.png">
+
+## Authors
+
+👤 **Godwin Nwachukwu**
+
+- GitHub: [@gnwin](https://github.com/Gnwin)
+- Twitter: [@gmarxr](https://twitter.com/gmarxr)
+- LinkedIn: [@Godwin](http://www.linkedin.com/in/n-gwin)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Gnwin/metrics-webapp/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
