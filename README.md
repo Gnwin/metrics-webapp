@@ -19,7 +19,7 @@
 
 ## Live preview
 
- [click here](https://www.loom.com/share/8e1eb12821d14746a169c4f2e0128852)
+ [click here](https://eclectic-custard-fa0758.netlify.app/)
 
 ## Video presentation
 
@@ -30,7 +30,7 @@
 To get a local copy up and running follow this simple step:
 
 - Clone repository to your local machine: `https://github.com/Gnwin/metrics-webapp.git`
-- Run `git checkout test`
+- Run `git checkout test1`
 - Run `npm install` to install dependencies
 - Run `npm start` to start the server
 
@@ -39,7 +39,7 @@ To get a local copy up and running follow this simple step:
 To get a local copy up and running follow this simple step:
 
 - Clone repository to your local machine: `https://github.com/Gnwin/metrics-webapp.git`
-- Run `git checkout test` to switch to test branch
+- Run `git checkout test1` to switch to test branch
 - Run `npm install` to install dependencies
 - Run `npm run test` to run test
 
