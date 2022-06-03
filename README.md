@@ -5,7 +5,8 @@
 ## Screenshots
 
 <img src="./src/assets/images/Screenshot 2022-06-01 at 9.12.11 AM.png">
-<img src="./src/assets/images/Screenshot 2022-06-01 at 9.12.40 AM.png">
+<img src="./src/assets/images/Screenshot 2022-06-03 at 12.57.43 PM.png">
+<img src="./src/assets/images/Screenshot 2022-06-03 at 12.58.59 PM.png">
 
 ## Built With
 
