@@ -17,6 +17,10 @@
   - Jest
   - Redux
 
+## Live preview
+
+ [click here](https://www.loom.com/share/8e1eb12821d14746a169c4f2e0128852)
+
 ## Video presentation
 
  [click here](https://www.loom.com/share/b3efdda77cd5494892d60420a6897647)
