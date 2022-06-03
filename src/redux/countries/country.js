@@ -36,10 +36,8 @@ function clearcountrydata(countrydata) {
 export function handleReceiveCountryData(country, states) {
   return (dispatch) => API.getAllCountryData(country, states)
     .then((countrydata) => {
-      console.log(countrydata);
       // eslint-disable-next-line
       const cont = countrydata.map((u) => {
-        console.log(Object.values(u.data.dates[date].countries)[0].regions[0]);
         return Object.values(u.data.dates[date].countries)[0].regions[0];
       });
       dispatch(receivecountrydata(cont));

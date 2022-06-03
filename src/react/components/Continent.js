@@ -3,6 +3,7 @@ import { useParams, useLocation, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Navigation from './Navigation';
 import { handleReceiveContinentData, handleClearContinentData } from '../../redux/continents/continent';
+import Input from './Input';
 
 const Continent = () => {
   const continentdata = useSelector((state) => state.continentdata);
@@ -10,7 +11,6 @@ const Continent = () => {
 
   const [continentInfo, setContinentInfo] = useState({
     value: '',
-    modcontinentdata: [],
   });
 
   const dispatch = useDispatch();
@@ -27,10 +27,14 @@ const Continent = () => {
   const updateCategory = (value) => {
     setContinentInfo({
       value,
-      modcontinentdata: continentdata.filter((data) => data.id === value),
     });
-    // setContinentInfo({});
   };
+
+  const showingContinent = continentInfo.value === ''
+    ? continentdata
+    : continentdata.filter((country) => (
+      country.name.toLowerCase().includes(continentInfo.value.toLowerCase())
+    ));
 
   return (
     <>
@@ -47,69 +51,59 @@ const Continent = () => {
         : (
           <div>
             <div className="forminput">
-              <div style={{ color: 'black' }}>Select Country:</div>
-              <select
-                placeholder="Category"
-                className="select"
-                value={continentInfo.value}
-                onChange={(e) => updateCategory(e.target.value)}
-                required
-              >
-                <option value="" defaultValue>country</option>
-                {continentdata.map((country) => (
-                  <option key={country.id} value={country.id}>{country.name}</option>
-                ))}
-              </select>
+              <div style={{ color: 'black' }}>Search Country:</div>
+              <Input value={continentInfo.value} onchange={updateCategory} placeholder="country" />
             </div>
 
-            {continentInfo.modcontinentdata.length === 0
-              ? (<div className="loading"><div className="load">There is nothing here, Please choose a country</div></div>)
-              : (
-                <div className="countries">
-                  {continentInfo.modcontinentdata.map((country, index) => (
-                    <Link
-                      key={country.id}
-                      to={{
-                        pathname: `/${params.continent}/${country.id}`,
-                      }}
-                      state={{
-                        country: country.id,
-                        states: location.state.states[index],
-                      }}
-                      className="country"
-                    >
-                      <p className="cname">{country.name}</p>
-                      <p className="ctc">
-                        today confirmed:
-                        {'  '}
-                        {country.today_confirmed}
-                      </p>
-                      <p className="ctc">
-                        todays cases:
-                        {'  '}
-                        {country.today_open_cases}
-                      </p>
-                      <p className="ctc">
-                        today new confirmed:
-                        {'  '}
-                        {country.today_new_confirmed}
-                      </p>
-                      <p className="ctc">
-                        today recovered:
-                        {'  '}
-                        {country.today_recovered}
-                      </p>
-                      <p
-                        className="ctc"
-                      >
-                        todays deaths:
-                        {'  '}
-                        {country.today_deaths}
-                      </p>
-                    </Link>
-                  ))}
+            <div className="countries">
+              {showingContinent.length === 0 && (
+                <div className="loading">
+                  <div className="load">No Matches</div>
                 </div>
               )}
+              {showingContinent.map((country) => (
+                <Link
+                  key={country.id}
+                  to={{
+                    pathname: `/${params.continent}/${country.id}`,
+                  }}
+                  state={{
+                    country: country.id,
+                    states: location.state.states,
+                  }}
+                  className="country"
+                >
+                  <p className="cname">{country.name}</p>
+                  <p className="ctc">
+                    today confirmed:
+                    {'  '}
+                    {country.today_confirmed}
+                  </p>
+                  <p className="ctc">
+                    todays cases:
+                    {'  '}
+                    {country.today_open_cases}
+                  </p>
+                  <p className="ctc">
+                    today new confirmed:
+                    {'  '}
+                    {country.today_new_confirmed}
+                  </p>
+                  <p className="ctc">
+                    today recovered:
+                    {'  '}
+                    {country.today_recovered}
+                  </p>
+                  <p
+                    className="ctc"
+                  >
+                    todays deaths:
+                    {'  '}
+                    {country.today_deaths}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
         )}
     </>

@@ -13,8 +13,8 @@ const metrics = [
     imageurl: asia,
     countries: ['china', 'india'],
     states: [
-      ['hainan', 'sichuan', 'henan', 'anhui'],
-      ['haryana', 'assam', 'nagaland', 'odisha'],
+      [['china'], ['hainan', 'sichuan', 'henan', 'anhui']],
+      [['india'], ['haryana', 'assam', 'nagaland', 'odisha']],
     ],
   },
   {
@@ -23,9 +23,9 @@ const metrics = [
     imageurl: europe,
     countries: ['germany', 'italy', 'spain'],
     states: [
-      ['berlin', 'bavaria', 'saxony', 'hessen'],
-      ['lazio', 'tuscany', 'campania', 'marche'],
-      ['castilla-la_mancha', 'melilla', 'canarias', 'asturias'],
+      [['germany'], ['berlin', 'bavaria', 'saxony', 'hessen']],
+      [['italy'], ['lazio', 'tuscany', 'campania', 'marche']],
+      [['spain'], ['castilla-la_mancha', 'melilla', 'canarias', 'asturias']],
     ],
   },
   {
@@ -34,8 +34,8 @@ const metrics = [
     imageurl: northamerica,
     countries: ['canada', 'mexico'],
     states: [
-      ['ontario', 'quebec', 'alberta', 'yukon'],
-      ['sonora', 'guerrero', 'veracruz'],
+      [['canada'], ['ontario', 'quebec', 'alberta', 'yukon']],
+      [['mexico'], ['sonora', 'guerrero', 'veracruz']],
     ],
   },
 ];
